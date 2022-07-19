@@ -5,13 +5,40 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
+    background-color: var(--secondary);
 }
 
 .search-part {
     background-color: var(--primary);
     color: var(--light);
-    width: 500px;
+    width: 400px;
     border-radius: 10px;
+    box-shadow: 2px 2px 5px var(--tint-primary);
+}
+
+.search-part__header {
+    border-bottom: 1px solid var(--medium-color);
+    padding: 16px;
+}
+
+.header-icon {
+    font-size: 24px;
+    padding: 0 8px;
+    cursor: pointer;
+    transition: color .2s;
+    color: var(--secondary);
+}
+
+.header-icon:hover {
+    color: var(--tint-accent);
+}
+
+.header-title {
+    font-size: var(--h5);
+    font-weight: var(--regular);
+    display: inline-block;
+    color: var(--secondary);
 }
 
 .search-part__body {
@@ -19,7 +46,6 @@ body {
 }
 
 .search-part__body :where(input) {
-    margin-top: 16px;
     padding: 8px;
     width: 100%;
     outline: none;
@@ -29,6 +55,30 @@ body {
     font-size: var(--body-1);
     text-align: center;
     display: block;
+}
+
+.body-message {
+    display: block;
+    padding: 8px;
+    margin-bottom: 32px;
+    margin-top: 0;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+
+.body-message--error {
+    background-color: var(--light-error);
+    color: var(--error);
+    border: 1px solid var(--error);
+    display: block;
+}
+
+.body-message--sucess {
+    background-color: var(--light-sucess);
+    color: var(--success);
+    border: 1px solid var(--success);
+    display: block
 }
 
 .body-input-text {
@@ -42,8 +92,8 @@ body {
     justify-content: center;
     height: 1px;
     background-color: var(--medium-color);
-    margin-top: 22px;
-    margin-bottom: 22px;
+    margin-top: 24px;
+    margin-bottom: 24px;
 }
 
 .body-separator::before {
@@ -60,6 +110,7 @@ body {
     box-shadow: 1px 1px 1px var(--accent);
     cursor: pointer;
     transition: background-color .5s;
+    margin-top: 16px;
 }
 
 .button:hover {
