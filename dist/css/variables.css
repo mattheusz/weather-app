@@ -1,0 +1,68 @@
+:root {
+
+    /* COLORS */
+    /* primary colors */
+    --primary: #0c2c41;
+    --tint-primary: #3d5667;
+    --shade-primary: #0b1f3e;
+
+    --secondary: #e5f5ff;
+
+    --accent: #b3e0ff;
+    --tint-accent: #cae9ff;
+
+    /* neutral colors */
+    --regular-color: #b3e0ff;
+    --medium-color: #f5fbff;
+    --light: #f5fbff;
+
+    --dark: #0d0d0d;
+
+    /* semantic colors */
+    --success: #22bb33;
+    --warning: #f0ad4e;
+    --error: #bb2124;
+    --light-error: #ebbcbd;
+
+    /* TYPOGRAPHY */
+
+    /* font family */
+
+    --title-font: 'Lato', sans-serif;
+    --body-font: 'Poppins', sans-serif;
+    --logo-font: 'Lobster', cursive;
+    --mono-font: 'Roboto Mono', monospace;
+    --display-font: 'Lobster', cursive;
+
+    /* font size */
+    --h1: 80px;
+    --h2: 60px;
+    --h3: 48px;
+    --h4: 36px;
+    --h5: 24px;
+    --body-1: 18px;
+    --body-2: 16px;
+
+    /* font weight */
+    --bold: 700;
+    --regular: 400;
+
+    /* line height */
+    --h1-line-height: calc(var(--h1) * 1.2);
+    --h2-line-height: calc(var(--h2) * 1.5);
+    --h3-line-height: calc(var(--h3) * 1.5);
+    --body-line-height: calc(var(--body-1) * 1.55);
+
+    /* Size buttons */
+    --normal-btn: 44px;
+    --large-btn: 54px;
+    --extra-large-btn: 64px;
+    --border-radius-normal-btn: 5px;
+    --border-radius-large-btn: 10px;
+    --border-radius-extra-large-btn: 15px;
+
+    /* Sombras */
+    --shadow-input: 1px 1px 2px var(--gray);
+    --shadow-card: 2px 2px 2px var(--gray);
+
+}
