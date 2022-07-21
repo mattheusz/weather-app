@@ -6,13 +6,13 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: var(--secondary);
+    background-color: var(--light);
 }
 
 .wrapper {
     width: 400px;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px var(--tint-primary);
+    box-shadow: 1px 1px 2px var(--tint-primary);
     background-color: var(--primary);
     color: var(--light);
     overflow: hidden;
@@ -56,12 +56,16 @@ body {
 
 /* starts SEARCH PART */
 
+.search-part {
+    background-color: var(--secondary);
+}
+
 .search-part--hidden {
     display: none;
 }
 
 .search-part :where(input) {
-    padding: 8px;
+    padding: 12px;
     width: 100%;
     outline: none;
     border: none;
@@ -97,7 +101,7 @@ body {
 }
 
 .search-part__input-text {
-    box-shadow: 2px 2px 2px var(--primary);
+    border: 1px solid var(--grey)
 }
 
 .search-part__separator {
@@ -106,22 +110,26 @@ body {
     align-items: center;
     justify-content: center;
     height: 1px;
-    background-color: var(--medium-color);
+    background-color: var(--grey);
+    color: var(--dark-grey);
     margin-top: 24px;
     margin-bottom: 24px;
 }
 
 .search-part__separator::before {
-    content: "or";
+    content: "ou";
     padding: 4px 8px;
-    background-color: var(--primary);
+    font-size: var(--body-1);
+    color: var(--dark-grey);
+    background-color: var(--secondary);
+    z-index: 1;
 }
 
 
 .search-part__submit {
-    background-color: var(--accent);
+    background-color: var(--primary);
     font-weight: var(--bold);
-    color: var(--primary);
+    color: var(--accent);
     box-shadow: 1px 1px 1px var(--accent);
     cursor: pointer;
     transition: background-color .2s;
@@ -129,11 +137,11 @@ body {
 }
 
 .search-part__submit:hover {
-    background-color: var(--tint-accent);
+    background-color: var(--tint-primary);
 }
 
 .search-part__:hover {
-    background-color: var(--tint-accent);
+    background-color: var(--tint-primary);
 }
 
 /* ends SEARCH PART */
@@ -161,7 +169,9 @@ body {
 .weather-part__temperature {
     color: var(--dark);
     font-size: var(--h2);
-    font-style: var(--bold);
+    font-weight: var(--medium);
+    height: 80px;
+
 }
 
 .temperature__celsius {
@@ -174,12 +184,14 @@ body {
 
 .weather-part__weather {
     color: var(--dark);
-    font-size: var(--h5);
+    font-size: 22px;
+    margin-bottom: 8px;
 }
 
 .weather-part__location {
     color: var(--dark);
     font-size: 20px;
+    margin-bottom: 16px;
 }
 
 .location__icon {
@@ -190,21 +202,35 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    border-top: 1px solid var(--grey);
 }
 
 .bottom-details__column {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
+    padding: 16px;
 }
 
 :is(.feel-column__feel-icon, .humidity-column__humidity-icon) {
     color: var(--primary);
-    font-size: 20px;
+    font-size: 36px;
 }
 
-.details {}
+.detail-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8px;
+    color: var(--dark);
+}
+
+.detail-text__number {
+    font-size: 20px;
+    font-weight: var(--medium);
+}
+
+.detail-text__description {
+    margin-top: -8px;
+}
 
 /* ends WEATHER PART */

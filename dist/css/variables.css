@@ -18,6 +18,7 @@
 
     --dark: #0d0d0d;
     --grey: #aaaaaa;
+    --dark-grey: #8e8e8e;
 
 
     /* semantic colors */
@@ -48,6 +49,7 @@
 
     /* font weight */
     --bold: 700;
+    --medium: 500;
     --regular: 400;
 
     /* line height */

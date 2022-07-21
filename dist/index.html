@@ -36,13 +36,13 @@
             <i class="fa-solid fa-arrow-left header__icon"></i>
             <h1 class="header__title">Clima Já</h1>
         </header>
-        <section class="search-part search-part--hidden">
+        <section class="search-part ">
             <span class="search-part__message">Error</span>
             <input type="text" class="search-part__input-text" placeholder="Entre com o nome da cidade">
             <div class="search-part__separator"></div>
             <input type="submit" class="search-part__submit" value="Usar localização do dispositivo">
         </section>
-        <section class="weather-part">
+        <section class="weather-part weather-part--hidden">
             <img src="icons/clear.svg" alt="Weather condition" class="wheter-part__icon">
             <div class="weather-part__temperature">
                 <span class="temperature__number">21</span>
@@ -57,11 +57,19 @@
             <section class="weather-part__bottom-details">
                 <div class="bottom-details__column">
                     <i class="fa-solid fa-temperature-half feel-column__feel-icon"></i>
-                    <div class="details"></div>
+                    <div class="detail-text">
+                        <div class="detail-text">
+                            <span class="detail-text__number">32º</span>
+                            <span class="detail-text__description">Feels like</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="bottom-details__column">
                     <i class="fa-solid fa-droplet humidity-column__humidity-icon"></i>
-                    <div class="details"></div>
+                    <div class="detail-text">
+                        <span class="detail-text__number">74%</span>
+                        <span class="detail-text__description">Humidity</span>
+                    </div>
                 </div>
             </section>
         </section>
