@@ -37,6 +37,11 @@ body {
     cursor: pointer;
     transition: color .2s;
     color: var(--secondary);
+    display: none;
+}
+
+.header__icon--active {
+    display: initial;
 }
 
 .header__icon:hover {
@@ -93,7 +98,7 @@ body {
     display: block;
 }
 
-.search-part__message--sucess {
+.search-part__message--pending {
     background-color: var(--light-sucess);
     color: var(--success);
     border: 1px solid var(--success);
