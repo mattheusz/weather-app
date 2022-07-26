@@ -4,7 +4,9 @@ const API_KEY = '6f20974040994af77981d119adb25248';
 
 let inputText = document.querySelector('.search-part__input-text'),
     submitButton = document.querySelector('.search-part__submit'),
-    requestedInformation = document.querySelector('.search-part__message');
+    requestedInformation = document.querySelector('.search-part__message'),
+    searchPart = document.querySelector('.search-part'),
+    weatherPart = document.querySelector('.weather-part');
 
 inputText.addEventListener("keyup", e => {
     if (e.key == "Enter" && inputText.value != '') {
@@ -39,8 +41,35 @@ function fetchData(url) {
 function seeWeatherDetails(details) {
     if (details.cod == "404") {
         requestedInformation.classList.replace("pending", "error");
-        requestedInformation.innerText = `${inputText.value} isn't a valid city name`;
+        requestedInformation.innerText = `${inputText.value} não é um nome válido de cidade.`;
+        return false;
     }
+    searchPart.classList.toggle('search-part--hidden');
+    weatherPart.classList.toggle('weather-part--hidden');
+    const temperatureNumber = document.querySelector('.temperature__number');
+    const weatherDescription = document.querySelector('.weather-part__weather');
+    const locationAndCountry = document.querySelector('.location__name-and-country');
+    const feelsLike = document.querySelector('#feels-like');
+    const airHumidity = document.querySelector('#humidity');
+
+
+
+    console.log('detalhes:', details)
+    const { main: { feels_like, humidity, temp } } = details;
+    const { name } = details;
+    const { sys: { country } } = details;
+    const { description, id } = details.weather[0];
+    // continues from here
+    if (id >= 200 && id < 300) {
+
+    }
+
+    temperatureNumber.innerText = Math.floor(temp);
+    weatherDescription.innerText = description;
+    locationAndCountry.innerText = `${name}, ${country}`;
+    feelsLike.innerText = `${Math.floor(feels_like)}º`;
+    airHumidity.innerText = `${humidity}%`
+    console.debug('feels like:', feels_like, '- humidity: ', humidity, '- temp:', temp, '- description:', description)
 
 }
 

@@ -193,6 +193,10 @@ body {
     margin-bottom: 8px;
 }
 
+.weather-part__weather::first-letter {
+    text-transform: uppercase;
+}
+
 .weather-part__location {
     color: var(--dark);
     font-size: 20px;
