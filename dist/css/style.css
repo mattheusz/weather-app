@@ -193,6 +193,7 @@ body {
     color: var(--dark);
     font-size: 22px;
     margin-bottom: 8px;
+    margin-top: 8px;
 }
 
 .weather-part__weather::first-letter {
@@ -206,7 +207,7 @@ body {
 }
 
 .location__icon {
-    font-size: 30px;
+    font-size: 18px;
 }
 
 .weather-part__bottom-details {

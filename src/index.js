@@ -5,6 +5,7 @@ const API_KEY = '6f20974040994af77981d119adb25248';
 let inputText = document.querySelector('.search-part__input-text'),
     submitButton = document.querySelector('.search-part__submit'),
     requestedInformation = document.querySelector('.search-part__message'),
+    headerIcon = document.querySelector('.header__icon'),
     searchPart = document.querySelector('.search-part'),
     weatherPart = document.querySelector('.weather-part'),
     weatherIcon = document.querySelector('.wheter-part__icon');
@@ -15,8 +16,20 @@ inputText.addEventListener("keyup", e => {
     }
 })
 
+headerIcon.addEventListener("click", e => {
+    if (headerIcon.classList.contains("header__icon--active")) {
+        headerIcon.classList.toggle("header__icon--active");
+        searchPart.classList.toggle('search-part--hidden');
+        weatherPart.classList.toggle('weather-part--hidden');
+        requestedInformation.classList.remove('search-part__message--error');
+        requestedInformation.classList.remove('search-part__message--pending');
+        inputText.value = "";
+    }
+})
+
 function requestAPI(cityName, requestedInformation) {
     requestedInformation.innerText = "Buscando detalhes do clima...";
+    requestedInformation.classList.remove('search-part__message--error');
     requestedInformation.classList.add('search-part__message--pending');
     const lang = 'pt_br';
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric&lang=${lang}`;
@@ -41,12 +54,13 @@ function fetchData(url) {
 
 function seeWeatherDetails(details) {
     if (details.cod == "404") {
-        requestedInformation.classList.replace("pending", "error");
+        requestedInformation.classList.replace('search-part__message--pending', 'search-part__message--error')
         requestedInformation.innerText = `${inputText.value} não é um nome válido de cidade.`;
         return false;
     }
     searchPart.classList.toggle('search-part--hidden');
     weatherPart.classList.toggle('weather-part--hidden');
+    headerIcon.classList.toggle('header__icon--active');
     const temperatureNumber = document.querySelector('.temperature__number');
     const weatherDescription = document.querySelector('.weather-part__weather');
     const locationAndCountry = document.querySelector('.location__name-and-country');
