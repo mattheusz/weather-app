@@ -27,10 +27,32 @@ headerIcon.addEventListener("click", e => {
     }
 })
 
-function requestAPI(cityName, requestedInformation) {
+submitButton.addEventListener("click", (e) => {
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(position => {
+            console.debug(position);
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            const lang = 'pt_br';
+            console.log(requestedInformation)
+            showLoadingMessage(requestedInformation);
+            let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric&lang=${lang}`
+            fetchData(url);
+
+        })
+    } else {
+        alert("O serviço de geolocalização não está disponível no seu dispositivo.");
+    }
+})
+
+function showLoadingMessage(requestedInformation) {
     requestedInformation.innerText = "Buscando detalhes do clima...";
     requestedInformation.classList.remove('search-part__message--error');
     requestedInformation.classList.add('search-part__message--pending');
+}
+
+function requestAPI(cityName, requestedInformation) {
+    showLoadingMessage(requestedInformation);
     const lang = 'pt_br';
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric&lang=${lang}`;
     fetchData(url);
