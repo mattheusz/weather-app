@@ -168,7 +168,9 @@ body {
 }
 
 .wheter-part__icon {
-    width: 150px;
+    margin-top: -50px;
+    width: auto;
+    height: 250px;
 }
 
 .weather-part__temperature {
@@ -176,7 +178,7 @@ body {
     font-size: var(--h2);
     font-weight: var(--medium);
     height: 80px;
-
+    margin-top: -50px;
 }
 
 .temperature__celsius {
@@ -204,7 +206,7 @@ body {
 }
 
 .location__icon {
-    font-size: 18px;
+    font-size: 30px;
 }
 
 .weather-part__bottom-details {
@@ -240,6 +242,11 @@ body {
 
 .detail-text__description {
     margin-top: -8px;
+}
+
+.detail-text__description {
+    font-size: 14px;
+    line-height: 19px;
 }
 
 /* ends WEATHER PART */

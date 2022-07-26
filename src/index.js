@@ -6,7 +6,8 @@ let inputText = document.querySelector('.search-part__input-text'),
     submitButton = document.querySelector('.search-part__submit'),
     requestedInformation = document.querySelector('.search-part__message'),
     searchPart = document.querySelector('.search-part'),
-    weatherPart = document.querySelector('.weather-part');
+    weatherPart = document.querySelector('.weather-part'),
+    weatherIcon = document.querySelector('.wheter-part__icon');
 
 inputText.addEventListener("keyup", e => {
     if (e.key == "Enter" && inputText.value != '') {
@@ -58,11 +59,36 @@ function seeWeatherDetails(details) {
     const { main: { feels_like, humidity, temp } } = details;
     const { name } = details;
     const { sys: { country } } = details;
-    const { description, id } = details.weather[0];
+    const { description, id, icon } = details.weather[0];
     // continues from here
     if (id >= 200 && id < 300) {
-
+        weatherIcon.src = 'icons/thunder.svg'
     }
+    else if (id >= 300 && id < 600) {
+        weatherIcon.src = 'icons/rainy-5.svg'
+    }
+    else if (id >= 600 && id < 700) {
+        weatherIcon.src = 'icons/snow-5.svg'
+    }
+    else if (id == 800) {
+        weatherIcon.src = /d$/.test(icon) ? 'icons/day.svg' : 'icons/night.svg';
+    }
+    else if (id == 801) { //11-25%
+        weatherIcon.src = /d$/.test(icon) ? 'icons/cloudy-day-1.svg' : 'icons/cloudy-night-1.svg';
+    }
+    else if (id == 802) { //25-50%
+        weatherIcon.src = /d$/.test(icon) ? 'icons/cloudy-day-2.svg' : 'icons/cloudy-night-2.svg';
+    }
+    else if (id == 803) { //51-84%
+        weatherIcon.src = /d$/.test(icon) ? 'icons/cloudy-day-3.svg' : 'icons/cloudy-night-3.svg';
+    }
+    else if (id == 804) { //85-100%
+        weatherIcon.src = 'icons/cloudy.svg';
+    }
+    else {
+        weatherIcon.src = 'icons/weather_sagittarius.svg';
+    }
+
 
     temperatureNumber.innerText = Math.floor(temp);
     weatherDescription.innerText = description;
