@@ -53,6 +53,7 @@ function showLoadingMessage(requestedInformation) {
 
 function requestAPI(cityName, requestedInformation) {
     showLoadingMessage(requestedInformation);
+    cityName = cityName.trim();
     const lang = 'pt_br';
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric&lang=${lang}`;
     fetchData(url);
@@ -105,6 +106,9 @@ function seeWeatherDetails(details) {
     }
     else if (id >= 600 && id < 700) {
         weatherIcon.src = 'icons/snow-5.svg'
+    }
+    else if (id >= 701 && id <= 721) {
+        weatherIcon.src = 'icons/haze.svg';
     }
     else if (id == 800) {
         weatherIcon.src = /d$/.test(icon) ? 'icons/day.svg' : 'icons/night.svg';
