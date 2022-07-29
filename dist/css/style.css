@@ -9,7 +9,7 @@ html {
 
 .wrapper {
     display: fixed;
-    height: 100vh;
+    height: 100%;
 }
 
 .wrapper :where(.search-part, .weather-part) {
