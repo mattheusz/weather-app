@@ -1,5 +1,6 @@
 .wrapper {
     display: fixed;
+    height: 100vh;
 }
 
 .wrapper :where(.search-part, .weather-part) {
@@ -209,8 +210,10 @@
 
 .weather-part__location {
     color: var(--dark);
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 16px;
+    margin-top: 4px;
+    text-align: center;
 }
 
 .location__icon {
@@ -307,6 +310,7 @@ a {
         color: var(--light);
         overflow: hidden;
         display: initial;
+        height: initial;
     }
 
     .search-part {
