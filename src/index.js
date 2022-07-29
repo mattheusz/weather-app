@@ -8,7 +8,7 @@ let inputText = document.querySelector('.search-part__input-text'),
     headerIcon = document.querySelector('.header__icon'),
     searchPart = document.querySelector('.search-part'),
     weatherPart = document.querySelector('.weather-part'),
-    weatherIcon = document.querySelector('.wheter-part__icon');
+    weatherIcon = document.querySelector('.weather-part__icon');
 
 inputText.addEventListener("keyup", e => {
     if (e.key == "Enter" && inputText.value != '') {
