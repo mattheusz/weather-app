@@ -14,6 +14,7 @@ O Clima Já é um aplicativo web que permite acessar informações do clima de s
 
 API utilizada:
 - [Open Weather Map API](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+
 Origem dos ícones indicadores do clima:
 - [AM Charts](https://www.amcharts.com/free-animated-svg-weather-icons/)
 - [The Noun Project](https://thenounproject.com/icon/haze-4118985/)
