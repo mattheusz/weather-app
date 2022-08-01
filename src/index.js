@@ -1,6 +1,6 @@
 const { reject } = require("lodash");
 
-const API_KEY = '6f20974040994af77981d119adb25248';
+const API_KEY = process.env.API_KEY;
 
 let inputText = document.querySelector('.search-part__input-text'),
     searchInputTextButton = document.querySelector('.search-part__input-button'),
