@@ -60,17 +60,7 @@
     display: none;
 }
 
-.search-part :where(input) {
-    padding: 12px;
-    width: 100%;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    font-family: var(--body-font);
-    font-size: var(--body-1);
-    text-align: center;
-    display: block;
-}
+.search-part :where(input) {}
 
 .search-part__message {
     display: block;
@@ -97,9 +87,54 @@
     display: block
 }
 
-.search-part__input-text {
-    border: 1px solid var(--grey)
+.search-part__input-group {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
 }
+
+.search-part__input-text {
+    padding: 12px;
+    outline: none;
+    border: none;
+    font-family: var(--body-font);
+    font-size: var(--body-1);
+    display: block;
+    border: none;
+    width: 100%;
+    text-align: center;
+}
+
+.search-part__input-button {
+    appearance: none;
+    background-color: var(--primary);
+    color: var(--accent);
+    border: none;
+    flex-basis: 60px;
+    align-self: stretch;
+    justify-self: center;
+    cursor: pointer;
+}
+
+.search-part__input-button-icon {
+    font-size: 28px;
+
+}
+
+.search-part__submit {
+    padding: 12px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--body-font);
+    font-size: var(--body-1);
+    display: block;
+    width: 100%;
+}
+
 
 .search-part__separator {
     color: var(--medium-color);
@@ -107,7 +142,7 @@
     align-items: center;
     justify-content: center;
     height: 1px;
-    background-color: var(--grey);
+    background-color: var(--primary);
     color: var(--dark-grey);
     margin-top: 24px;
     margin-bottom: 24px;
@@ -117,7 +152,7 @@
     content: "ou";
     padding: 4px 8px;
     font-size: var(--body-1);
-    color: var(--dark-grey);
+    color: var(--primary);
     background-color: var(--secondary);
     z-index: 1;
 }

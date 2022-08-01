@@ -52,7 +52,12 @@
         </header>
         <section class="search-part ">
             <span class="search-part__message">-</span>
-            <input type="text" class="search-part__input-text" placeholder="Entre com o nome da cidade">
+            <div class="search-part__input-group">
+                <input type="text" class="search-part__input-text" placeholder="Entre com o nome da cidade">
+                <button type="button" class="search-part__input-button"><i
+                        class="fa-solid fa-magnifying-glass-location search-part__input-button-icon"></i></button>
+            </div>
+
             <div class="search-part__separator"></div>
             <input type="button" class="search-part__submit" value="Usar localização do dispositivo">
             <div class="search-part__cards search-part__cards--hidden">
@@ -96,7 +101,8 @@
                 </div>
             </section>
         </section>
-        <footer class="footer">Desenvolvido por <a href="https://matheusjustino.vercel.app/">Matheus Justino</a> ❤️
+        <footer class="footer">Desenvolvido por <a target="_blank" href="https://matheusjustino.vercel.app/">Matheus
+                Justino</a> ❤️
         </footer>
     </div>
     <script src="main.js"></script>

@@ -3,6 +3,7 @@ const { reject } = require("lodash");
 const API_KEY = '6f20974040994af77981d119adb25248';
 
 let inputText = document.querySelector('.search-part__input-text'),
+    searchInputTextButton = document.querySelector('.search-part__input-button'),
     submitButton = document.querySelector('.search-part__submit'),
     requestedInformation = document.querySelector('.search-part__message'),
     headerIcon = document.querySelector('.header__icon'),
@@ -10,8 +11,19 @@ let inputText = document.querySelector('.search-part__input-text'),
     weatherPart = document.querySelector('.weather-part'),
     weatherIcon = document.querySelector('.weather-part__icon');
 
+
+console.debug('button:', searchInputTextButton)
+console.debug('input text:', inputText)
+
 inputText.addEventListener("keyup", e => {
     if (e.key == "Enter" && inputText.value != '') {
+        requestAPI(inputText.value, requestedInformation);
+    }
+})
+
+searchInputTextButton.addEventListener("click", e => {
+    console.debug('button is called')
+    if (inputText.value != '') {
         requestAPI(inputText.value, requestedInformation);
     }
 })
