@@ -9,6 +9,7 @@ O Clima Já é um aplicativo web que permite acessar informações do clima de s
 - Pesquisar pelo clima da cidade desejada
 - Multiplataforma
 
+
 ## Recursos externos
 
 API utilizada:
@@ -16,7 +17,6 @@ API utilizada:
 Origem dos ícones indicadores do clima:
 - [AM Charts](https://www.amcharts.com/free-animated-svg-weather-icons/)
 - [The Noun Project](https://thenounproject.com/icon/haze-4118985/)
-
 ## Autor
 
 [@mattheusz](https://github.com/mattheusz)
